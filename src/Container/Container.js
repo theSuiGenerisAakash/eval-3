@@ -5,7 +5,12 @@ import Import from '../Import/Import';
 import dispatchImport from '../redux/actions';
 
 class Container extends React.Component {
-
+  constructor(props){
+    super(props);
+    this.state ={
+      layout: 0,
+    }
+  }
   importBooks = () => {
     fetch('/store').then(() => {
       fetch('/read').then(result =>
@@ -16,12 +21,30 @@ class Container extends React.Component {
   }
 
   render() {
-    return (
-      <div className="Container">
-        <div className="Container-title">The Book Shelf</div>
-        <Import importBooks={this.importBooks} />
-      </div>
-    );
+    if(this.state.layout === 0) {
+      return (
+        <div className="Container">
+          <div className="Container-title">The Book Shelf</div>
+          <Import importBooks={this.importBooks} />
+        </div>
+      );
+    }
+      return (
+        <div className="Container">
+        </div>
+        );
+  }
+
+  componentDidMount(){
+    fetch('/read').then(result => {
+      return result.json();
+    }).then((resultJSON) => {
+      if(resultJSON.result.length === 0) {
+        this.setState({layout: 0});
+      }  else {
+          this.setState({layout: 1});
+      }
+    }).catch( err => console.log(err));
   }
 }
 
