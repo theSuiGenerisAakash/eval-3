@@ -1,11 +1,11 @@
 .Header {
-  position: fixed;
   height: 100vh;
   background-color: #303A47;
   font-family: "HelveticaNeue-CondensedBold";
   font-size: 36px;
   padding: 1%;
   color: white;
+  flex-grow: 1;
 }
 
 .Header-content {

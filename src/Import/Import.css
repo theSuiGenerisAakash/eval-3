@@ -1,0 +1,23 @@
+.Import {
+  background-color: #f76922;
+  border: 2px solid;
+  border-radius: 8px;
+  padding: 10vh;
+  width: 30vw;
+  position: relative;
+  top: 40vh;
+  left: 20vw;
+  right: 20vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.Import-text {
+  font-size: 34px;
+  font-family: "HelveticaNeue-CondensedBold";
+  padding-bottom: 5vh;
+  align-self: center;
+}
+
+.Import img{
+}

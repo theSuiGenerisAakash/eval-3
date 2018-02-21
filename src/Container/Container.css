@@ -1,0 +1,15 @@
+.Container {
+  flex-grow:30;
+}
+
+.Container-title {
+  padding: 1.5%;
+  border: 1px solid;
+  background-color: #944744;
+  color: white;
+  text-align: center;
+  font-size: 38px;
+  font-family: "HelveticaNeue-Light";
+  position: absolute;
+  border-bottom-right-radius: 8px;
+}
