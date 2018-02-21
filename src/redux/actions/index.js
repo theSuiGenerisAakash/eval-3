@@ -1,8 +1,11 @@
 export const dispatchImportType = 'IMPORT';
+export const dispatchReadType = 'READ';
 
-const dispatchImport = result => ({
+export const dispatchImport = result => ({
   type: dispatchImportType,
   payload: result,
 });
 
-export default dispatchImport;
+export const dispatchRead = () => ({
+  type: dispatchReadType,
+});

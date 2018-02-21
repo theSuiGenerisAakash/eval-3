@@ -13,7 +13,11 @@ export default (prevState = bookStore, action) => {
           LikeStatus: elem.LikeStatus,
         })
       ));
+      prevState = booksArr;
       return booksArr;
+    }
+    case 'READ': {
+      return prevState;
     }
     default:
       return prevState;

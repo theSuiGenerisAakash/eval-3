@@ -2,20 +2,23 @@ import React from 'react';
 import { connect } from 'react-redux';
 import './Container.css';
 import Import from '../Import/Import';
-import dispatchImport from '../redux/actions';
+import { dispatchImport, dispatchRead } from '../redux/actions';
+import Section from '../Section/Section';
 
 class Container extends React.Component {
   constructor(props){
     super(props);
     this.state ={
-      layout: 0,
+      layout: 1,
     }
   }
+
   importBooks = () => {
     fetch('/store').then(() => {
       fetch('/read').then(result =>
         result.json()).then((resultJSON) => {
         this.props.dispatchImportFunc(resultJSON.result);
+        console.log(resultJSON);
       }).then(() => {
         console.log(this.props.allBooks);
         this.setState({layout:1});
@@ -23,6 +26,25 @@ class Container extends React.Component {
     }).catch(err => console.log(err));
   }
 
+  populateBooks = () => {
+    const bookAuthors = [];
+    this.props.allBooks.forEach((book) => {
+      if(bookAuthors.indexOf(book.Author) === -1) {
+        bookAuthors.push(book.Author);
+      }
+    });
+    const sections = [];
+    bookAuthors.forEach(author => {
+      const forOneAuthor = [];
+      this.props.allBooks.forEach(book => {
+        if(book.Author === author) {
+          forOneAuthor.push(book);
+        }
+      });
+      sections.push(<Section books={forOneAuthor} author={author} />);
+    });
+    return sections;
+  }
   render() {
     if(this.state.layout === 0) {
       return (
@@ -34,6 +56,8 @@ class Container extends React.Component {
     }
       return (
         <div className="Container">
+            <div className="Container-title">The Book Shelf</div>
+            {this.populateBooks()}
         </div>
         );
   }
@@ -45,6 +69,7 @@ class Container extends React.Component {
       if(resultJSON.result.length === 0) {
         this.setState({layout: 0});
       }  else {
+          this.props.dispatchImportFunc(resultJSON.result);
           this.setState({layout: 1});
       }
     }).catch( err => console.log(err));
@@ -57,6 +82,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   dispatchImportFunc: resultArr => dispatch(dispatchImport(resultArr)),
+  dispatchReadFunc: () => dispatch(dispatchRead()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Container);
