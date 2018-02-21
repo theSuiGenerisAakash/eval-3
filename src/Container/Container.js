@@ -16,7 +16,10 @@ class Container extends React.Component {
       fetch('/read').then(result =>
         result.json()).then((resultJSON) => {
         this.props.dispatchImportFunc(resultJSON.result);
-      }).then(() => console.log(this.props.allBooks)).catch(err => console.log(err));
+      }).then(() => {
+        console.log(this.props.allBooks);
+        this.setState({layout:1});
+      }).catch(err => console.log(err));
     }).catch(err => console.log(err));
   }
 
