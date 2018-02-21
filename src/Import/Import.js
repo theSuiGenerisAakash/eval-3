@@ -8,10 +8,10 @@ class Import extends Component {
       <div className="Import">
         <div className="Import-text">
           Oops ! No Book found!
-          <br />
+          <br /><br />
             &nbsp;&nbsp;&nbsp;Import them now?
         </div>
-        <img src={ImportIcon} alt="Import Icon" />
+        <img src={ImportIcon} alt="Import Icon" onClick={() => this.props.importBooks()} />
       </div>
     );
   }
