@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import './Container.css';
 import Import from '../Import/Import';
-import { dispatchImport, dispatchRead } from '../redux/actions';
+import { dispatchImport } from '../redux/actions';
 import Section from '../Section/Section';
 
 class Container extends React.Component {
@@ -41,7 +41,7 @@ class Container extends React.Component {
           forOneAuthor.push(book);
         }
       });
-      sections.push(<div className="SectionBlock"><div className="Author">{author}</div><Section books={forOneAuthor} /></div>);
+      sections.push(<div className="SectionBlock" key={author}><div className="SectionAuthor">{author}</div><Section books={forOneAuthor} /></div>);
     });
     return sections;
   }
@@ -59,7 +59,7 @@ class Container extends React.Component {
       return (
         <div className="Container">
             <div className="TitleBlock">
-              <div className="Container-title">The <span class="BookText">Book</span> Shelf <div className="BrownLine" /></div>
+              <div className="Container-title">The <span className="BookText">Book</span> Shelf <div className="BrownLine" /></div>
             </div>
             {this.populateBooks()}
         </div>
@@ -86,7 +86,6 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   dispatchImportFunc: resultArr => dispatch(dispatchImport(resultArr)),
-  dispatchReadFunc: () => dispatch(dispatchRead()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Container);

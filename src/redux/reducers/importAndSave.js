@@ -16,9 +16,6 @@ export default (prevState = bookStore, action) => {
       prevState = booksArr;
       return booksArr;
     }
-    case 'READ': {
-      return prevState;
-    }
     default:
       return prevState;
   }

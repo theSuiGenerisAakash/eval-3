@@ -5,7 +5,7 @@
   box-shadow: 0.3px 0.3px 0.3px;
 }
 
-.BookItem img {
+.article-img {
   height: 260px;
   width: 210px;
   border-radius: 12px;
@@ -15,7 +15,7 @@
   position: absolute;
   bottom: 0;
   width: 190px;
-  height: 40%;
+  height: 45%;
   padding: 10px;
   font-size: 12px;
   background-color: white;
@@ -25,6 +25,8 @@
 
 .BookItem-Name {
   font-family: "HelveticaNeue-CondensedBold";
+  font-size: 14px;
+  padding-top: 1.5vh;
 }
 
 .BookItem-Rating {
@@ -35,7 +37,22 @@
 .BookItem-Author {
   font-family: "HelveticaNeue-CondensedBold";
   text-align: right;
-  position: relative;
-  top: 2vh;
+  position: absolute;
+  bottom: 1vh;
   right: 0.5vw;
+  font-size: 16px;
+}
+
+.BookItem-Status {
+  border-radius: 240px;
+  position: absolute;
+  bottom: 80%;
+  width: 50px;
+  height: 50px;
+  right: 1vw;
+}
+
+.heartIcon {
+  max-width: 90%;
+  max-height: 90%;
 }
