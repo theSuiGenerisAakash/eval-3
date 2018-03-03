@@ -1,8 +1,6 @@
 .Section {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-gap: 30px;
+  display: flex;
+  flex-wrap: wrap;
   background-color: #EA8D4C;
   padding: 2vh;
-  margin: 5vh;
 }

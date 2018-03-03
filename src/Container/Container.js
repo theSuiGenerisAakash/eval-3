@@ -41,7 +41,7 @@ class Container extends React.Component {
           forOneAuthor.push(book);
         }
       });
-      sections.push(<Section books={forOneAuthor} author={author} />);
+      sections.push(<div className="SectionBlock"><div className="Author">{author}</div><Section books={forOneAuthor} /></div>);
     });
     return sections;
   }
@@ -49,14 +49,18 @@ class Container extends React.Component {
     if(this.state.layout === 0) {
       return (
         <div className="Container">
-          <div className="Container-title">The Book Shelf</div>
+          <div className="TitleBlock">
+          <div className="Container-title">The <span class="BookText">Book</span> Shelf <div className="BrownLine" /></div>
+        </div>
           <Import importBooks={this.importBooks} />
         </div>
       );
     }
       return (
         <div className="Container">
-            <div className="Container-title">The Book Shelf</div>
+            <div className="TitleBlock">
+              <div className="Container-title">The <span class="BookText">Book</span> Shelf <div className="BrownLine" /></div>
+            </div>
             {this.populateBooks()}
         </div>
         );

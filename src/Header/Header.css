@@ -5,7 +5,9 @@
   font-size: 36px;
   padding: 1%;
   color: white;
-  flex-grow: 1;
+  position: fixed;
+  width: 3%;
+  text-align: center;
 }
 
 .Header-content {

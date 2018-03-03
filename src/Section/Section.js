@@ -7,14 +7,13 @@ export default class Section extends React.Component {
     const books = [];
     this.props.books.forEach(book =>{
       console.log(book);
-      books.push(<BookItem name={book.Name} rating={book.rating} author={book.author} />);
+      books.push(<BookItem name={book.Name} rating={book.Rating} author={book.Author} />);
     });
     return books;
   }
   render() {
     return (
       <div className="Section">
-        <div>{this.props.author}</div>
         {this.getBooks()}
       </div>
     );

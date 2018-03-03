@@ -1,17 +1,48 @@
 .Container {
-  flex-grow:30;
   display: flex;
   flex-direction: column;
+  width:95%;
+  position: absolute;
+  right: 0;
 }
 
 .Container-title {
-  padding: 1.5%;
-  border: 1px solid;
+  padding: 0.7% 2.5%;
   background-color: #944744;
   color: white;
   text-align: center;
-  font-size: 38px;
+  font-size: 22px;
   font-family: "HelveticaNeue-Light";
-  position: absolute;
+  font-weight: lighter;
   border-bottom-right-radius: 8px;
+  width: 180px;
+}
+
+.TitleBlock {
+  flex-grow: 1;
+}
+
+.Author {
+  font-size: 30px;
+  font-family: "HelveticaNeue-Light";
+  font-weight: 100;
+  padding: 4vh 0 2vh 10vh;
+  color: black;
+}
+
+.SectionBlock {
+  flex-grow: 1;
+}
+
+.BookText {
+  font-size: 30px;
+  font-family: "HelveticaNeue-Light";
+}
+
+.BrownLine {
+  background-color: white;
+  opacity: 0.4;
+  border-radius: 2px;
+  height: 0.4vh;
+  margin-bottom: 2%;
 }

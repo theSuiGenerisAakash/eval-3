@@ -1,19 +1,41 @@
 .BookItem{
   position: relative;
   border-radius: 12px;
-  object-fit: cover;
+  margin: 2vw 4.5vw;
+  box-shadow: 0.3px 0.3px 0.3px;
 }
 
 .BookItem img {
-  height: 200px;
-  width: 100px;
+  height: 260px;
+  width: 210px;
+  border-radius: 12px;
 }
 
 .BookItem-desc{
   position: absolute;
   bottom: 0;
-  width: 100px;
-  overflow: auto;
+  width: 190px;
+  height: 40%;
   padding: 10px;
+  font-size: 12px;
   background-color: white;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.BookItem-Name {
+  font-family: "HelveticaNeue-CondensedBold";
+}
+
+.BookItem-Rating {
+  font-family: "HelveticaNeue-UltraLight";
+  font-size: 30px;
+}
+
+.BookItem-Author {
+  font-family: "HelveticaNeue-CondensedBold";
+  text-align: right;
+  position: relative;
+  top: 2vh;
+  right: 0.5vw;
 }
